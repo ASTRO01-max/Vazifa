@@ -25,8 +25,9 @@ class Electronics(Product):
         self.warranty = warranty
 
     def info(self):
-        return super().info() + f", Kafolat muddati: {self.warranty} yil"
-
+        data = super().info()
+        data += f", garantiya: {self.warranty}yil"
+        return data
 
 class Food(Product):
     def __init__(self, name, price, quantity, expiration_date):
@@ -34,8 +35,10 @@ class Food(Product):
         self.expiration_date = expiration_date  
 
     def info(self):
-        return super().info() + f", Yaroqlilik muddati: {self.expiration_date}"
-
+        data = super().info()
+        data += f", Yaroqlilik muddati: {self.expiration_date}"
+        return data
+    
     def sell(self, amount):
         if self.expiration_date < "2025-02-11":  
             return "Xatolik: mahsulot muddati o'tgan!"
