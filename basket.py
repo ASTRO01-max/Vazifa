@@ -1,6 +1,7 @@
 class Basket:
     def __init__(self):
         self.products = []
+        self.products2 = []
 
     def add(self, product, price, quantity):
         self.products.append({"product": product, "price": price, "quantity": quantity})
@@ -29,6 +30,19 @@ class Basket:
                     self.products.remove(i)
                 return f"{product} ({quantity} dona) savatdan olib tashlandi"
         return f"{product} savatda topilmadi"
+    
+    def append_to_second_basket(self):
+        self.products2 = self.products.copy()  
+        return f"Mahsulotlar 2chi savatga qo'shildi: {self.products2}"
+    
+    def revome_second_basket(self):
+        for i in self.products2:
+            self.products2.remove(i)
+        print("2chi savat polniy o'chib ketti")
+    def revome_second_basket(self):
+        self.products2.clear()  
+        print("2chi savat butunlay o'chirildi")
+
 
 b = Basket()
 print(b.add("qulpinay", 2, 3))
@@ -37,4 +51,7 @@ print(b.show())
 print(b.calc())
 print(b.remove("qulpinay", 2))
 print(b.show())
+b.append_to_second_basket()
+print(b.append_to_second_basket())
+b.revome_second_basket()
 
