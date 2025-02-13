@@ -40,7 +40,7 @@ class Food(Product):
         return data
     
     def sell(self, amount):
-        if self.expiration_date < "2025-02-11":  
+        if self.expiration_date > "2025-02-11":  
             return "Xatolik: mahsulot muddati o'tgan!"
         return super().sell(amount)
 
