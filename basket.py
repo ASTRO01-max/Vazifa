@@ -36,13 +36,12 @@ class Basket:
         return f"Mahsulotlar 2chi savatga qo'shildi: {self.products2}"
     
     def revome_second_basket(self):
-        for i in self.products2:
-            self.products2.remove(i)
-        print("2chi savat polniy o'chib ketti")
-    def revome_second_basket(self):
         self.products2.clear()  
         print("2chi savat butunlay o'chirildi")
 
+    def delete_basket(self):
+        self.products.clear() 
+        return "Savat butunlay bo'shatildi!"
 
 b = Basket()
 print(b.add("qulpinay", 2, 3))
