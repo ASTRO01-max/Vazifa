@@ -47,14 +47,4 @@ class Basket:
         self.products.clear() 
         return "Savat butunlay bo'shatildi!"
 
-# b = Basket()
-# print(b.add("qulpinay", 2, 3))
-# print(b.add("Banan", 1, 2))
-# print(b.show())
-# print(b.calc())
-# print(b.remove("qulpinay", 2))
-# print(b.show())
-# b.append_to_second_basket()
-# print(b.append_to_second_basket())
-# b.revome_second_basket()
 

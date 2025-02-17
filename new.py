@@ -1,5 +1,7 @@
 from uuid import uuid4 as id
 from uuid import uuid4 as idd
+from basket import Basket
+from main import Product
 import time
 
 class Product:
@@ -48,43 +50,6 @@ class Food(Product):
             return "Xatolik: mahsulot muddati o'tgan!"
         return super().sell(amount)
 
-# Savat klassi
-class Basket:
-    def __init__(self):
-        self.__id = idd()
-        self.products = []
-
-    def add(self, product, price, quantity):
-        self.products.append({"product": product, "price": price, "quantity": quantity})
-        return f"{product} ({quantity} dona) savatga qo'shildi!"
-
-    def show(self): 
-        if not self.products:
-            return "Savat bo'sh"
-        result = "Savat ichida:\n"
-        for i in self.products:
-            result += f"- {i['product']}: {i['price']} USD ({i['quantity']} dona)\n"
-        return result
-
-    def calc(self):
-        summa = sum(i["price"] * i["quantity"] for i in self.products)
-        return f"Umumiy narx: {summa} USD"
-
-    def remove(self, product, quantity=1):
-        for i in self.products:
-            if i["product"] == product:
-                if i["quantity"] > quantity:
-                    i["quantity"] -= quantity
-                else:
-                    self.products.remove(i)
-                return f"{product} ({quantity} dona) savatdan olib tashlandi"
-        return f"{product} savatda topilmadi"
-
-    def delete_basket(self):
-        self.products.clear() 
-        return "Savat butunlay bo'shatildi!" 
-
-# Dastur boshlanishi
 products = []
 basket = Basket()
 
