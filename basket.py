@@ -1,11 +1,15 @@
+from uuid import uuid4 as id
+
 class Basket:
     def __init__(self):
+        self.__id = id()
         self.products = []
         self.products2 = []
 
     def add(self, product, price, quantity):
-        self.products.append({"product": product, "price": price, "quantity": quantity})
-        return f"{product} ({quantity} savatga qo'shildi"
+        product_id = self.__id
+        self.products.append({"product": product, "price": price, "quantity": quantity, "id" : product_id})
+        return f"{product} ({quantity} savatga qo'shildi, id{product_id}"
 
     def show(self): 
         if not self.products:
@@ -43,14 +47,14 @@ class Basket:
         self.products.clear() 
         return "Savat butunlay bo'shatildi!"
 
-b = Basket()
-print(b.add("qulpinay", 2, 3))
-print(b.add("Banan", 1, 2))
-print(b.show())
-print(b.calc())
-print(b.remove("qulpinay", 2))
-print(b.show())
-b.append_to_second_basket()
-print(b.append_to_second_basket())
-b.revome_second_basket()
+# b = Basket()
+# print(b.add("qulpinay", 2, 3))
+# print(b.add("Banan", 1, 2))
+# print(b.show())
+# print(b.calc())
+# print(b.remove("qulpinay", 2))
+# print(b.show())
+# b.append_to_second_basket()
+# print(b.append_to_second_basket())
+# b.revome_second_basket()
 

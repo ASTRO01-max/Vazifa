@@ -12,7 +12,14 @@
 # print(lst2)
 
 """"""
- 
-# lst=[1, 2, 3, 4, 5]
-# lst.clear()
-# print(lst)
+
+
+thisdict={
+"ism":"Saloh ybanazavr",
+"familiya":"dalbayoba zavr",
+"yil":"miloddan avvalgi 10000-chi asr"
+
+}
+
+N=input("")
+print(thisdict[N])
